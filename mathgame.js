@@ -2,8 +2,8 @@ questionsList = new Mongo.Collection("questions");
 
 // clears the collection (otherwise would accumulate on every load)
 // adds some questions
-questionsList.insert({question: "3+3", answer: 6});
-questionsList.insert({question: "1+2", answer: 3});
+questionsList.insert({question: "3+3", answer: 6, current: false});
+questionsList.insert({question: "1+2", answer: 3, current: false});
 
 
 
