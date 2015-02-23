@@ -41,7 +41,12 @@ if (Meteor.isClient) {
 
       var answer = questionsList.findOne(questionId).answer;
 
-      console.log(answer);
+      if (answer == submittedAnswer){
+        console.log("correct");
+        var score = Session.get("score");
+        Session.set("score", score+1);
+
+      }
     }
   });
 
