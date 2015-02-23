@@ -41,11 +41,14 @@ if (Meteor.isClient) {
 
       var answer = questionsList.findOne(questionId).answer;
 
+      var score = Session.get("score");
+
       if (answer == submittedAnswer){
         console.log("correct");
-        var score = Session.get("score");
         Session.set("score", score+1);
 
+      } else {
+        Session.set("score", score-1);
       }
     }
   });
