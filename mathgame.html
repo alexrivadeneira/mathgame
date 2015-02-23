@@ -15,8 +15,13 @@
 		<h3>questionArea template</h3>
 		<ul> 
 			{{#each showQuestions}}
-			<li> {{question}} = {{answer}} </li>
-		{{/each}}
+				<li> {{question}}</li>
+					<form>
+						<input type="text" name="answer">
+						<input type="submit" value="Answer!">
+					</form>
+			{{/each}}
+
 		</ul>
 	</div>
 </template>
@@ -24,5 +29,6 @@
 <template name="score" class="score-template">
 	<div id="score-template">
 		<h3>score Template</h3>
+		Your score is: <strong>{{score}}</strong>
 	</div>
 </template>
