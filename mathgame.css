@@ -1,1 +1,10 @@
 /* CSS declarations go here */
+#question-template{
+	border: 2px solid black;
+	margin: 10px 10px 10px 10px;
+}
+
+#score-template{
+	border: 2px solid red;
+	margin: 10px 10px 10px 10px;
+}

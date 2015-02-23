@@ -6,12 +6,18 @@
   <h1>Welcome to Meteor!</h1>
 
   {{>score}}
+  {{>questionArea}}
 
 </body>
 
-<template name="question-area">
+<template name="questionArea">
+	<div id="question-template">
+		<h3>questionArea template</h3>
+	</div>
 </template>
 
-<template name="score">
-	<strong>Your score is: </strong>{{score}} <p>jksfadjlklfjdskjkfdls</p>
+<template name="score" class="score-template">
+	<div id="score-template">
+		<h3>score Template</h3>
+	</div>
 </template>
