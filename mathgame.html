@@ -13,6 +13,11 @@
 <template name="questionArea">
 	<div id="question-template">
 		<h3>questionArea template</h3>
+		<ul> 
+			{{#each showQuestions}}
+			<li> {{question}} = {{answer}} </li>
+		{{/each}}
+		</ul>
 	</div>
 </template>
 
