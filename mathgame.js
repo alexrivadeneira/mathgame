@@ -11,6 +11,8 @@ if (Meteor.isClient) {
   // counter starts at 0
   Session.setDefault('score', 0);
 
+/* Score Template */
+
   Template.score.helpers({
     score: function () {
       var score = Session.get("score");
@@ -18,11 +20,16 @@ if (Meteor.isClient) {
     }
   });
 
+
+/* Question Template */
+
   Template.questionArea.helpers({
     showQuestions: function () {
       return questionsList.find({});
     }
+
   });
+
 
   Template.questionArea.events({
     "submit form": function (event) {
