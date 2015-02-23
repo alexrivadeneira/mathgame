@@ -38,9 +38,10 @@ if (Meteor.isClient) {
 
       // get the id of the li, via the classname
       var questionId = this._id;
-      console.log(questionId);
 
-      console.log(questionsList.find(questionId));
+      var answer = questionsList.findOne(questionId).answer;
+
+      console.log(answer);
     }
   });
 
