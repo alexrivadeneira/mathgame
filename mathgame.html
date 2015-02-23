@@ -13,19 +13,19 @@
 <template name="questionArea">
 	<div id="question-template">
 		<h3>questionArea template</h3>
-		<ul> 
 
+		<ul id="questions"> 
 
+			<li class="{{showQuestions._id}}">
+				{{showQuestions.question}}
 
-			{{#each showQuestions}}
-				<li class="{{this._id}}"> {{question}} </li>
-					<form>
-						<input type="text" name="answer">
-						<input type="submit" value="Answer!">
-					</form>
+				<form>
+					<input type="text" name="answer">
+					<input type="hidden" name="questionId" value="{{showQuestions._id}}">
+					<input type="submit" value="Answer!">
+				</form>
 
-			{{/each}}
-
+			</li>
 
 		</ul>
 	</div>

@@ -10,6 +10,7 @@ questionsList.insert({question: "1+2", answer: 3, current: false});
 if (Meteor.isClient) {
   // counter starts at 0
   Session.setDefault('score', 0);
+  Session.set("currentQuestion", 0);
 
 /* Score Template */
 
@@ -25,7 +26,10 @@ if (Meteor.isClient) {
 
   Template.questionArea.helpers({
     showQuestions: function () {
-      return questionsList.find({});
+
+      // gets the number of the question for the player
+      questionNumber = Session.get("currentQuestion");
+      return questionsList.find({}).fetch()[questionNumber];
     }
 
   });
@@ -34,10 +38,11 @@ if (Meteor.isClient) {
   Template.questionArea.events({
     "submit form": function (event) {
       event.preventDefault();
-      var submittedAnswer = event.target.answer.value;
+     
+      var questionId = event.target.questionId.value;
 
-      // get the id of the li, via the classname
-      var questionId = this._id;
+      var submittedAnswer = event.target.answer.value;
+      console.log(submittedAnswer);
 
       var answer = questionsList.findOne(questionId).answer;
 
@@ -45,11 +50,12 @@ if (Meteor.isClient) {
 
       if (answer == submittedAnswer){
         console.log("correct");
-        Session.set("score", score+1);
+        Session.set("score", score + 1);
 
       } else {
-        Session.set("score", score-1);
+        Session.set("score", score - 1);
       }
+
     }
   });
 
