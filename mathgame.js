@@ -27,7 +27,7 @@ if (Meteor.isClient) {
   Template.questionArea.events({
     "submit form": function (event) {
       event.preventDefault();
-      submittedAnswer = event.target.answer.value;
+      var submittedAnswer = event.target.answer.value;
     }
   });
 

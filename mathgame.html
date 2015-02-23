@@ -14,12 +14,14 @@
 	<div id="question-template">
 		<h3>questionArea template</h3>
 		<ul> 
+
 			{{#each showQuestions}}
-				<li> {{question}}</li>
+				<li class="question"> {{question}} </li>
 					<form>
 						<input type="text" name="answer">
 						<input type="submit" value="Answer!">
 					</form>
+
 			{{/each}}
 
 		</ul>
