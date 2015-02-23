@@ -35,6 +35,12 @@ if (Meteor.isClient) {
     "submit form": function (event) {
       event.preventDefault();
       var submittedAnswer = event.target.answer.value;
+
+      // get the id of the li, via the classname
+      var questionId = this._id;
+      console.log(questionId);
+
+      console.log(questionsList.find(questionId));
     }
   });
 
