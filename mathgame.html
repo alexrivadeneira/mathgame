@@ -14,7 +14,9 @@
 	<div id="question-template">
 		<h3>questionArea template</h3>
 
-		<ul id="questions"> 
+
+		{{#if showQuestions}}
+		<ul> 
 
 			<li class="{{showQuestions._id}}">
 				{{showQuestions.question}}
@@ -28,6 +30,8 @@
 			</li>
 
 		</ul>
+		{{/if}}
+
 	</div>
 </template>
 

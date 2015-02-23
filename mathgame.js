@@ -56,6 +56,13 @@ if (Meteor.isClient) {
         Session.set("score", score - 1);
       }
 
+      // whatever the outcome, go to the next question:
+      
+      var currentQuestion = Session.get("currentQuestion");
+      var nextQuestion = currentQuestion + 1;
+      Session.set("currentQuestion", nextQuestion);
+
+
     }
   });
 
