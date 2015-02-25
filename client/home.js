@@ -12,7 +12,7 @@ Template.userList.helpers({
 });
 
 
-/*
+
 Template.userButton.events({
 	"click button": function(event, template){
 		Meteor.call("createGame", template.data._id);
@@ -20,5 +20,3 @@ Template.userButton.events({
 
 	}
 });
-
-*/
