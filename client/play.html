@@ -1,3 +1,20 @@
 <template name="play">
-	test
+	{{> signupLogin}}
+
+	{{#if currentUser}}
+		{{> statusTemplate}}
+	{{/if}}
+</template>
+
+<template name="statusTemplate">
+	<p> <a href="/"> Home </a> </p>
+
+	<h2> Game between: </h2>
+
+	<strong> Players: </strong> {{players}} <br><br>
+	GameId: {{gameId}} <br><br>
+	InProgress: {{inProgress}} <br><br>
+	QuestionStore: {{questionsStore}}
+
+
 </template>
