@@ -3,12 +3,13 @@
 
 	{{#if currentUser}}
 		{{>userList}}
+		{{>gamesList}}
 	{{/if}}
 
 </template>
 
 <template name="userList">
-	<p>Select a user you want to play with:</p>
+	<h3>Select a user you want to play with:</h3>
 	{{#each users}}
 		<li> {{> userButton}} </li>
 	{{/each}}
@@ -16,4 +17,17 @@
 
 <template name="userButton">
 	<button>{{username}}</button>
+</template>
+
+
+
+<template name="gamesList">
+	<h3>Select one of your games:</h3>
+	{{#each games}}
+		{{>individualGame}}
+	{{/each}}
+</template>
+
+<template name="individualGame">
+	<li> {{_id}} </li>
 </template>
