@@ -1,0 +1,19 @@
+<template name="home">
+	{{>signupLogin}}
+
+	{{#if currentUser}}
+		{{>userList}}
+	{{/if}}
+
+</template>
+
+<template name="userList">
+	<p>Select a user you want to play with:</p>
+	{{#each users}}
+		<li> {{> userButton}} </li>
+	{{/each}}
+</template>
+
+<template name="userButton">
+	<button>{{username}}</button>
+</template>
