@@ -1,3 +1,9 @@
+Template.gamesList.helpers({
+	games: function(){
+		return Games.find({inProgress: true});
+	}
+});
+
 Template.userList.helpers({
 	users: function(){
 
@@ -11,12 +17,14 @@ Template.userList.helpers({
 	
 });
 
-
+ 
 
 Template.userButton.events({
 	"click button": function(event, template){
+		//console.log(Games.findOne());
 		Meteor.call("createGame", template.data._id);
 	
-
 	}
 });
+
+

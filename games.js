@@ -17,23 +17,23 @@ if (Meteor.isServer){
 	// publish games that contain the logged in user
 	// When we do Games.find, will be limited from here
 	Meteor.publish("games", function(){
+		return Games.find({});
+		/*
 		var currentUserId = Meteor.userId();
 		return Games.find({players: currentUserId});
+		*/
 	});
 
 	Meteor.publish("users", function(){
 		return Meteor.users.find();
 	});
 
-	Meteor.publish("questions", function(){
-		return questionsList.find({});
-	});
+
 }
 
 if (Meteor.isClient){
 	Meteor.subscribe("games");
 	Meteor.subscribe("users");
-	Meteor.subscribe("questions");
 }
 
 

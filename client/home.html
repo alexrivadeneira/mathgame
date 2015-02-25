@@ -23,11 +23,13 @@
 
 <template name="gamesList">
 	<h3>Select one of your games:</h3>
-	{{#each games}}
-		{{>individualGame}}
-	{{/each}}
+	<ul>
+		{{#each games}}
+			Here's the game: {{>individualGame}}
+		{{/each}}
+	</ul>
 </template>
 
 <template name="individualGame">
-	<li> {{_id}} </li>
+	<li><a href="/game/{{_id}}">Game with...</a></li>
 </template>
