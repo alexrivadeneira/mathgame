@@ -14,7 +14,7 @@ Template.individualQuestion.events({
 
 
 		if (userAnswer == realAnswer){
-			console.log(template._id);
+			console.log(template);
 
 			// find the game
 
