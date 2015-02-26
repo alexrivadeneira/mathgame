@@ -17,7 +17,7 @@ if (Meteor.isServer){
 	// publish games that contain the logged in user
 	// When we do Games.find, will be limited from here
 	Meteor.publish("games", function(){
-		return Games.find({});
+		return Games.find();
 		/*
 		var currentUserId = Meteor.userId();
 		return Games.find({players: currentUserId});
