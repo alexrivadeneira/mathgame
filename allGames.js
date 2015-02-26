@@ -35,13 +35,21 @@ GameFactory.createGame = function(playerIds){
 function createPlayers(ids){
 	var players = {};
 
+	var playerNames = ["playerOne", "playerTwo"];
+
+	var i = 0;
+
 	ids.forEach(function (id){
-		players[id] = {
+		players[playerNames[i]] = {
+			id: id,
 			score: 0
 		};
+		i ++;
 	});
 
 	return players;
+
+	console.log(players);
 
 }
 
