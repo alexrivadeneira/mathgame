@@ -14,14 +14,25 @@
 	<strong> Game Id: </strong> {{_id}} <br><br>
 	Players: {{players}} <br><br>
 		
-	QuestionStore: {{#each questionsStore}} 
-				{{> individualQuestion}}
-				{{/each}}
+	QuestionStore: 
+
+	<ul> 
+		{{#each questionsStore}} 
+			{{> individualQuestion}}
+		{{/each}}
+	</ul>
 
 </template>
 
 <template name="individualQuestion">
-	{{q}}
+	<li class="{{a}}">
+		{{q}}
+		<form>
+			<input type="text" name="userAnswer">
+			<input type="hidden" name="realAnswer" value="{{a}}">
+			<input type="submit" value="Answer!">
+		</form>
+	 </li>
 </template>
 
 
