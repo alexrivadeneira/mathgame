@@ -42,7 +42,8 @@ function createPlayers(ids){
 	ids.forEach(function (id){
 		players[playerNames[i]] = {
 			id: id,
-			score: 0
+			score: 0,
+			username: Meteor.users.findOne({_id: id}).username
 		};
 		i ++;
 	});
