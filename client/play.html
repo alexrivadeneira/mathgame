@@ -12,7 +12,9 @@
 	<h2> Game between: </h2>
 
 	<strong> Game Id: </strong> {{_id}} <br><br>
-	Players: {{players}} <br><br>
+	Players: {{#each players}}
+				{{> individualPlayer}}
+				{{/each}}
 		
 	QuestionStore: 
 
@@ -33,6 +35,11 @@
 			<input type="submit" value="Answer!">
 		</form>
 	 </li>
+</template>
+
+<template name="individualPlayer">
+		{{id}}
+
 </template>
 
 
