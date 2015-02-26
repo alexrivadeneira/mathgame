@@ -42,6 +42,10 @@ Meteor.methods({
 		var game = GameFactory.createGame([Meteor.userId(), otherPlayerId]);
 		Games.insert(game);
 
+	},
+
+	takeTurn: function(gameId){
+		console.log(gameId);
 	}
 });
 
