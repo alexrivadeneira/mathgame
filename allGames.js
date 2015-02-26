@@ -23,10 +23,12 @@ GameFactory.createGame = function(playerIds){
 					a: "14"}];
 
 	var players = createPlayers(playerIds);
+	console.log(players);
 
 	return {
 		questionsStore: questions,
-		players: players
+		playerOne: players[0],
+		playerTwo: players[1]
 	};
 
 };
@@ -41,8 +43,6 @@ function createPlayers(ids){
 	var playerOneStats = [];
 	var playerTwoStats = [];
 
-	var playerOneContainer = {};
-	var playerTwoContainer = {};
 
 	var i = 0;
 
@@ -51,17 +51,13 @@ function createPlayers(ids){
 			playerOneStats.push(playerOne["id"] = {id: id});
 			playerOneStats.push(playerOne["score"] = {score: 0});
 			playerOneStats.push(playerOne["username"] = {username: Meteor.users.findOne({_id: id}).username});
-
-			playerOneContainer["playerOne"] = playerOneStats;
-			players.push(playerOneContainer);
+			players.push(playerOneStats);
 			i++;
 		} else if (i == 1){
 			playerTwoStats.push(playerTwo["id"] = {id: id});
 			playerTwoStats.push(playerTwo["score"] = {score: 0});
 			playerTwoStats.push(playerTwo["username"] = {username: Meteor.users.findOne({_id: id}).username});
-
-			playerTwoContainer["playerTwo"] = playerTwoStats;
-			players.push(playerTwoContainer);
+			players.push(playerTwoStats);
 			i++;
 		}
 	});

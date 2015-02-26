@@ -9,20 +9,36 @@
 <template name="statusTemplate">
 	<p> <a href="/"> Home </a> </p>
 
-	<h2> Game between: </h2>
+	<h2> Game!</h2>
 
-	<strong> Game Id: </strong> {{_id}} <br><br>
-	Players: {{#each players}}
-				{{> individualPlayer}}
-				{{/each}}
+	<ul>
+		<li>
+			<strong> Game Id: </strong> {{_id}} <br><br> 
+		</li>
+	
+		<li>
+			<strong>PlayerOne:</strong> {{#each playerOne}} 
+				{{> playerUserName}} {{> playerId}} {{> playerScore}}
+			{{/each}}
+		</li>
+
+		<li>
+			<strong>PlayerTwo:</strong> {{#each playerTwo}} 
+				{{> playerUserName}} {{> playerId}} {{> playerScore}}
+			{{/each}}
+		</li>
+
+	</ul>
 		
-	QuestionStore: 
+	<br><br> QuestionStore: 
 
 	<ul> 
 		{{#each questionsStore}} 
 			{{> individualQuestion}}
 		{{/each}}
 	</ul>
+
+
 
 </template>
 
@@ -37,9 +53,16 @@
 	 </li>
 </template>
 
-<template name="individualPlayer">
-		{{id}}
+<template name="playerUserName">
+	{{username}}
+</template>
 
+<template name="playerScore">
+	{{score}}
+</template>
+
+<template name="playerId">
+	{{id}}
 </template>
 
 
