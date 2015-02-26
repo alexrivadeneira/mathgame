@@ -12,12 +12,17 @@
 	<h2> Game between: </h2>
 
 	<strong> Game Id: </strong> {{_id}} <br><br>
-	Players: {{#each players}}
-				{{_id}}
-
-			{{/each}} <br><br>
-	QuestionStore: {{questionsStore}} <br><br>
+	Players: {{players}} <br><br>
+		
+	QuestionStore: {{#each questionsStore}} 
+				{{> individualQuestion}}
+				{{/each}}
 
 </template>
+
+<template name="individualQuestion">
+	{{q}}
+</template>
+
 
 
