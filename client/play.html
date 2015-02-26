@@ -14,7 +14,17 @@
 	<strong> Game Id: </strong> {{_id}} <br><br>
 	Players: {{players}} <br><br>
 	InProgress: {{inProgress}} <br><br>
-	QuestionStore: {{questionsStore}}
+	QuestionStore: {{questionsStore}} <br><br>
 
+	Players: 
+	<ul> 
+		{{#each players}}
+			{{> eachPlayer}}
+		{{/each}}
+	</ul>
 
+</template>
+
+<template name="eachPlayer">
+	<li> {{player.password}} </li>
 </template>
