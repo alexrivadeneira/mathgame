@@ -1,6 +1,6 @@
 
 
-Template.individualQuestion.events({
+Template.statusTemplate.events({
 	"submit form": function(event, template){
 		event.preventDefault();
 
@@ -9,12 +9,10 @@ Template.individualQuestion.events({
 
 		var currentUser = Meteor.userId();
 
-		var gameId = event.target.gameId.value;
-
 
 
 		if (userAnswer == realAnswer){
-			console.log(template);
+			console.log(template.data._id);
 
 			// find the game
 

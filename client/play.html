@@ -7,6 +7,9 @@
 </template>
 
 
+
+
+
 <template name="statusTemplate">
 	<p> <a href="/"> Home </a> </p>
 
@@ -34,27 +37,25 @@
 	<br><br> QuestionStore: 
 
 	<ul> 
-
 		{{#each questionsStore}} 
-			{{> individualQuestion}}
+			<li class="question">
+				{{q}}
+				<form>
+					<input type="text" name="userAnswer">
+					<input type="hidden" name="realAnswer" value="{{a}}">
+					<input type="submit" value="Answer!">
+				</form>
+			 </li>
 		{{/each}}
 	</ul>
-
 
 
 </template>
 
 <template name="individualQuestion">
 
-	<li class="question">
-		{{q}}
-		<form>
-			<input type="text" name="userAnswer">
-			<input type="hidden" name="realAnswer" value="{{a}}">
-			<input type="hidden" name="gameId" value="5Rde7vp5WpkruTgjW">
-			<input type="submit" value="Answer!">
-		</form>
-	 </li>
+
+
 </template>
 
 <template name="playerUserName">
@@ -68,6 +69,8 @@
 <template name="playerId">
 	{{id}}
 </template>
+
+
 
 
 
