@@ -32,4 +32,17 @@
 
 <template name="individualGame">
 	<li><a href="/game/{{_id}}">Game Room</a></li>
+	{{#each playerOne}}
+		{{username}}
+	{{/each}} 
+
+	vs 
+	
+	{{#each playerTwo}}
+		{{username}}
+	{{/each}}
+</template>
+
+<template name="playerOne">
+	hi
 </template>
