@@ -44,8 +44,13 @@ Meteor.methods({
 
 	},
 
-	takeTurn: function(gameId){
-		console.log(gameId);
+	scorePoint: function(gameId, playerId){
+		var game = Games.findOne(gameId);
+		console.log(game.playerOne[1].score);
 	}
+
 });
+
+
+// Meteor.call("scorePoint", template.data._id, Meteor.userId());
 
