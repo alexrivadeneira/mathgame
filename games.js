@@ -54,11 +54,36 @@ Meteor.methods({
 			game.playerTwo[1].score += 1;
 			Games.update(gameId, game);	
 		}
+	},
+
+	markAnswered: function(gameId, questionMarked){
+		var game = Games.findOne(gameId);
+
+		var i = 0;
+
+		//game.questionsStore.forEach(function(questionInSet){
+		
+		console.log(game.questionsStore.length);
+
 
 		
+		while (i < game.questionsStore.length && game.questionsStore[i].q != questionMarked){
+			i++;
+		}
+		
+		game.questionsStore[i].answered = true;
 
 
+
+		// console.log(game.questionsStore[i].q);
+			
+
+		// game.questionsStore[i][answered] == true;
+
+		Games.update(gameId, game);	
 	}
+	
+
 
 });
 

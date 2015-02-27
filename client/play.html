@@ -37,15 +37,19 @@
 	<br><br> QuestionStore: 
 
 	<ul> 
-		{{#each questionsStore}} 
+		{{#each questionsStore}}
+
+			{{#unless answered}} 
 			<li class="question">
 				{{q}}
 				<form>
 					<input type="text" name="userAnswer">
 					<input type="hidden" name="realAnswer" value="{{a}}">
+					<input type="hidden" name="question" value="{{q}}">
 					<input type="submit" value="Answer!">
 				</form>
 			 </li>
+			{{/unless}}
 		{{/each}}
 	</ul>
 
