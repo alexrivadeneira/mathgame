@@ -25,11 +25,11 @@
 	<h3>Select one of your games:</h3>
 	<ul>
 		{{#each games}}
-			Here's the game: {{>individualGame}}
+			{{>individualGame}}
 		{{/each}}
 	</ul>
 </template>
 
 <template name="individualGame">
-	<li><a href="/game/{{_id}}">Game with...</a></li>
+	<li><a href="/game/{{_id}}">Game Room</a></li>
 </template>
