@@ -9,9 +9,9 @@
 </template>
 
 <template name="userList">
-	<h3>Select a user you want to play with:</h3>
+	<h3>Select A Challenger:</h3>
 	{{#each users}}
-		<li> {{> userButton}} </li>
+		<div class="user">{{> userButton}} </div>
 	{{/each}}
 </template>
 
@@ -25,24 +25,42 @@
 	<h3>Select one of your games:</h3>
 	<ul>
 		{{#each games}}
-			{{>individualGame}}
+			<div class="gameRoomLink">{{>individualGame}}</div>
 		{{/each}}
 	</ul>
 </template>
 
 <template name="individualGame">
-	<li><a href="/game/{{_id}}">Game Room</a></li>
-	{{#each playerOne}}
-		{{username}}
-	{{/each}} 
-
-	vs 
+	<a href="/game/{{_id}}">Enter Room</a><br><br>
 	
-	{{#each playerTwo}}
-		{{username}}
-	{{/each}}
+	<div class="playerStats">
+		<span class="playerName">
+			{{#each playerOne}}
+				{{username}}
+			{{/each}} 
+		</span>
+
+		<span class="playerScore">
+			{{#each playerOne}}
+				{{score}}
+			{{/each}} 
+		</span>
+	</div>
+
+
+	<div class="playerStats">
+	
+		<span class="playerName">
+			{{#each playerTwo}}
+				{{username}}
+			{{/each}}
+		</span>
+
+		<span class="playerScore">
+			{{#each playerTwo}}
+				{{score}}
+			{{/each}}
+		</span>
+	</div>
 </template>
 
-<template name="playerOne">
-	hi
-</template>

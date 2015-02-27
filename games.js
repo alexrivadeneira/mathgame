@@ -85,6 +85,10 @@ Meteor.methods({
 		} else if (game.inProgressMarker != "X" && game.inProgressMarker != userId){
 			game.inProgress = true;
 			Games.update(gameId, game);	
+		} else {
+			console.log(game.inProgressMarker);
+			console.log(userId);
+			console.log("osmethings wrong")
 		}
 	}
 
