@@ -61,28 +61,31 @@ Meteor.methods({
 
 		var i = 0;
 
-		//game.questionsStore.forEach(function(questionInSet){
-		
 		console.log(game.questionsStore.length);
-
-
-		
+	
 		while (i < game.questionsStore.length && game.questionsStore[i].q != questionMarked){
 			i++;
 		}
 		
 		game.questionsStore[i].answered = true;
 
-
-
-		// console.log(game.questionsStore[i].q);
-			
-
-		// game.questionsStore[i][answered] == true;
-
 		Games.update(gameId, game);	
-	}
+	},
+
+
 	
+	markInProgress: function(gameId, userId){
+		var game = Games.findOne(gameId);
+		console.log(game.inProgressCount);
+
+		if (game.inProgressCount == 0){
+			game.inProgressCount = userId;
+			Games.update(gameId, game);
+		} else {
+			game.inProgress = true;
+			Games.update(gameId, game);
+		}
+	}
 
 
 });

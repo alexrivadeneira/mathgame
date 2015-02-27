@@ -46,3 +46,25 @@ header{
     border: 3px solid black;
     padding: 10px 10px 10px 10px;
 }
+
+.question{
+    font-size: 30px;
+}
+
+
+.questionBlock{
+    display: inline-block;
+}
+
+.formBlock{
+    display: inline-block;
+}
+
+.startButton{
+    display: block;
+    font-size: 40px;
+    text-align: center;
+    margin: 30px auto;
+    padding: 30px 30px 30px 30px;
+    border-radius: 5px;
+}

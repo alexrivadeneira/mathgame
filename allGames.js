@@ -62,7 +62,9 @@ GameFactory.createGame = function(playerIds){
 	return {
 		questionsStore: questions,
 		playerOne: players[0],
-		playerTwo: players[1]
+		playerTwo: players[1],
+		inProgress: false,
+		inProgressCount: 0
 	};
 
 };

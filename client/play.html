@@ -8,9 +8,9 @@
 
 
 
-
-
 <template name="statusTemplate">
+
+
 	<p> <a href="/"> Return Home </a> </p>
 
 	<h2> Players:</h2>
@@ -36,26 +36,41 @@
 
 
 
+{{#if inProgress}}
 
 	<ul> 
 		{{#each questionsStore}}
 
 			{{#unless answered}} 
-			<li class="question">
-				{{q}}
-				<form>
-					<input type="text" name="userAnswer">
-					<input type="hidden" name="realAnswer" value="{{a}}">
-					<input type="hidden" name="question" value="{{q}}">
-					<input type="submit" value="Answer!">
-				</form>
-			 </li>
+			
+			<div class="question">
+
+				<span class="questionBlock">{{q}} =</span>
+				<span class="formBlock">
+					<form>
+						<input type="text" name="userAnswer">
+						<input type="hidden" name="realAnswer" value="{{a}}">
+						<input type="hidden" name="question" value="{{q}}">
+						<input type="submit" value="Answer!">
+					</form>
+				</span>
+			</div>
+		
 			{{/unless}}
 		{{/each}}
 	</ul>
 
+{{else}}
+
+<button class="startButton">Click to play!</button>
+
+{{/if}}
 
 </template>
+
+
+
+
 
 <template name="individualQuestion">
 

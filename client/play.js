@@ -9,6 +9,13 @@ Template.gamesList.helpers({
 
 
 Template.statusTemplate.events({
+
+	// click to start the game
+	"click button": function(event, template){
+		Meteor.call("markInProgress", template.data._id, Meteor.userId());
+	},
+
+	// answer a question
 	"submit form": function(event, template){
 		event.preventDefault();
 
