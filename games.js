@@ -46,7 +46,12 @@ Meteor.methods({
 
 	scorePoint: function(gameId, playerId){
 		var game = Games.findOne(gameId);
-		console.log(game.playerOne[1].score);
+		game.playerOne[1].score += 1;
+
+		Games.update(gameId, game);
+		
+		console.log(game);
+
 	}
 
 });
