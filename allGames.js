@@ -14,13 +14,56 @@ GameFactory.createGame = function(playerIds){
 
 	var questions = [
 					{q: "2+2",
-					a: "4"},
+					a: "4",
+					answered: false},
 
 					{q: "1+2",
-					a: "3"},
+					a: "3",
+					answered: false},
+
+					{q: "4+4",
+					a: "8",
+					answered: false},
+
+					{q: "5+2",
+					a: "7",
+					answered: false},
+
+					{q: "6+0",
+					a: "6",
+					answered: false},
+
+					{q: "4+5",
+					a: "9",
+					answered: false},
+
+					{q: "3+7",
+					a: "10",
+					answered: false},
+
+					{q: "1+8",
+					a: "9",
+					answered: false},
+
+					{q: "7+2",
+					a: "9",
+					answered: false},
+
+					{q: "6+8",
+					a: "14",
+					answered: false},
+
+					{q: "3+3",
+					a: "6",
+					answered: false},
+
+					{q: "5+3",
+					a: "8",
+					answered: false},
 
 					{q: "7+7",
-					a: "14"}];
+					a: "14",
+					answered: false}];
 
 	var players = createPlayers(playerIds);
 	console.log(players);

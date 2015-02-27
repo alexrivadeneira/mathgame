@@ -1,5 +1,13 @@
 
 
+
+Template.gamesList.helpers({
+	games: function(){
+		return Games.find({});
+	}
+});
+
+
 Template.statusTemplate.events({
 	"submit form": function(event, template){
 		event.preventDefault();
