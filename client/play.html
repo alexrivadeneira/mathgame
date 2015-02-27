@@ -11,30 +11,31 @@
 
 
 <template name="statusTemplate">
-	<p> <a href="/"> Home </a> </p>
+	<p> <a href="/"> Return Home </a> </p>
 
-	<h2> Game!</h2>
+	<h2> Players:</h2>
 
-	<ul>
-		<li>
-			<strong> Game Id: </strong> {{_id}} <br><br> 
-		</li>
+	<div id="scorebox">
 	
-		<li>
-			<strong>PlayerOne:</strong> {{#each playerOne}} 
-				{{> playerUserName}} {{> playerId}} {{> playerScore}}
+		<div id="playerOne">	
+			{{#each playerOne}} 
+				<span class="score"> {{> playerScore}} </span> {{> playerUserName}} 
 			{{/each}}
-		</li>
-
-		<li>
-			<strong>PlayerTwo:</strong> {{#each playerTwo}} 
-				{{> playerUserName}} {{> playerId}} {{> playerScore}}
-			{{/each}}
-		</li>
-
-	</ul>
 		
-	<br><br> QuestionStore: 
+		</div>
+
+		<div id="playerTwo">
+		
+			 {{#each playerTwo}} 
+				<span class="score"> {{> playerScore}} </span> {{> playerUserName}}
+			{{/each}}
+		</div>
+
+	</div>
+		
+
+
+
 
 	<ul> 
 		{{#each questionsStore}}
@@ -69,11 +70,6 @@
 <template name="playerScore">
 	{{score}}
 </template>
-
-<template name="playerId">
-	{{id}}
-</template>
-
 
 
 
