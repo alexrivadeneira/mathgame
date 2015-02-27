@@ -7,7 +7,7 @@ GameFactory.createGame = function(playerIds){
 					{q: "2+2",
 					a: "4",
 					answered: true},
-
+/*
 					{q: "1+2",
 					a: "3",
 					answered: false},
@@ -51,7 +51,7 @@ GameFactory.createGame = function(playerIds){
 					{q: "5+3",
 					a: "8",
 					answered: false},
-
+*/
 					{q: "7+7",
 					a: "14",
 					answered: false}];

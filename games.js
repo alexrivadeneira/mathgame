@@ -109,13 +109,17 @@ Meteor.methods({
 		if (questionsCount == answeredQuestionsCount){
 			game.gameOver = true;
 
-			if (game.playerOne.score > game.playerTwo.score){
-				game.winner = playerOne.username;
-			} else if (game.playerTwo.score > game.playerOne.score){
-				game.winner = playerTwo.username;
+			console.log(game.playerOne[1].score);
+			console.log(game.playerTwo[1].score);
 
+			if (game.playerOne[1].score > game.playerTwo[1].score){
+				game.winner = game.playerOne[2].username;
+				
+			} else if (game.playerTwo[1].score > game.playerOne[1].score){
+				game.winner = game.playerTwo[2].username;
+				
 			} else {
-				game.winner = "Tie game!";
+				game.winner = "Everybody";
 			}
 		}
 
