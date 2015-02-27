@@ -78,12 +78,13 @@ Meteor.methods({
 		var game = Games.findOne(gameId);
 		console.log(game.inProgressCount);
 
-		if (game.inProgressCount == 0){
-			game.inProgressCount = userId;
+		if (game.inProgressMarker == "X"){
+			game.inProgressMarker = userId;
+			game.inProgressCount = "Waiting for other player..."
 			Games.update(gameId, game);
-		} else {
+		} else if (game.inProgressMarker != "X" && game.inProgressMarker != userId){
 			game.inProgress = true;
-			Games.update(gameId, game);
+			Games.update(gameId, game);	
 		}
 	}
 
