@@ -90,6 +90,36 @@ Meteor.methods({
 			console.log(userId);
 			console.log("osmethings wrong")
 		}
+	},
+
+	checkGameOver: function(gameId){
+		var game = Games.findOne(gameId);
+
+		var questions = game.questionsStore;
+		
+		var questionsCount = game.questionsStore.length;
+		var answeredQuestionsCount = 0;
+
+		questions.forEach(function(question){
+			if (question.answered == true){
+				answeredQuestionsCount++;
+			}
+		});
+
+		if (questionsCount == answeredQuestionsCount){
+			game.gameOver = true;
+
+			if (game.playerOne.score > game.playerTwo.score){
+				game.winner = playerOne.username;
+			} else if (game.playerTwo.score > game.playerOne.score){
+				game.winner = playerTwo.username;
+
+			} else {
+				game.winner = "Tie game!";
+			}
+		}
+
+		Games.update(gameId, game);
 	}
 
 

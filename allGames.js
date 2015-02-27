@@ -65,7 +65,9 @@ GameFactory.createGame = function(playerIds){
 		playerTwo: players[1],
 		inProgress: false,
 		inProgressCount: "Click to Start",
-		inProgressMarker: "X"
+		inProgressMarker: "X",
+		gameOver: false,
+		winner: "X"
 	};
 
 };

@@ -120,3 +120,10 @@ header{
 .playerName{
     border: 1px solid black;
 }
+
+#gameOver{
+    display: block;
+    font-size: 70px;
+    text-align: center;
+    margin: 70px auto;
+}

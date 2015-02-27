@@ -31,7 +31,8 @@ Template.statusTemplate.events({
 			//console.log(template.data._id);
 			Meteor.call("scorePoint", template.data._id, Meteor.userId());
 			Meteor.call("markAnswered", template.data._id, question);
-
+			Meteor.call("checkGameOver", template.data._id);
+			
 			//something like this to update score:
 	//    Meteor.call('takeTurn', gameId, id, cardToPlay);
 

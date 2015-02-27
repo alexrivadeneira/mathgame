@@ -38,7 +38,8 @@
 
 {{#if inProgress}}
 
-
+	
+	{{#unless gameOver}}
 
 		{{#each questionsStore}}
 
@@ -59,6 +60,9 @@
 		
 			{{/unless}}
 		{{/each}}
+	{{else}}
+		<div id="gameOver">{{winner}} wins!</div>
+	{{/unless}}
 
 
 
