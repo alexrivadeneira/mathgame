@@ -6,55 +6,69 @@ GameFactory.createGame = function(playerIds){
 	var questions = [
 					{q: "2+2",
 					a: "4",
-					answered: true},
+					answered: true,
+					position: 0},
 
 					{q: "1+2",
 					a: "3",
-					answered: false},
+					answered: false,
+					position: 300},
 
 					{q: "4+4",
 					a: "8",
-					answered: false},
+					answered: false,
+					position: 500},
 
 					{q: "5+2",
 					a: "7",
-					answered: false},
+					answered: false,
+					position: 200},
 
 					{q: "6+0",
 					a: "6",
-					answered: false},
+					answered: false,
+					position: 300},
 /*
 					{q: "4+5",
 					a: "9",
-					answered: false},
+					answered: false,
+					position: 700},
 
 					{q: "3+7",
 					a: "10",
-					answered: false},
+					answered: false,
+					position: 500},
 
 					{q: "1+8",
 					a: "9",
-					answered: false},
+					answered: false,
+					position: 800},
 
 					{q: "7+2",
 					a: "9",
-					answered: false},
+					answered: false,
+					position: 100},
 
 					{q: "6+8",
 					a: "14",
-					answered: false},
+					answered: false,
+					position: 100},
 
 					{q: "3+3",
 					a: "6",
-					answered: false},
+					answered: false,
+					position: 300},
 
 					{q: "5+3",
 					a: "8",
-					answered: false},
+					answered: false,
+					position: 700},
 */
 					{q: "7+7",
 					a: "14",
-					answered: false}];
+					answered: false,
+					position: 300}
+					];
 
 	var players = createPlayers(playerIds);
 	console.log(players);

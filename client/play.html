@@ -45,16 +45,18 @@
 
 			{{#unless answered}} 
 			
+
+
 			<div class="question">
 
-				<span class="questionBlock">{{q}} =</span>
-				<span class="formBlock">
-					<form>
-						<input type="text" name="userAnswer">
-						<input type="hidden" name="realAnswer" value="{{a}}">
-						<input type="hidden" name="question" value="{{q}}">
-					</form>
-				</span>
+					<span class="questionBlock" style="position: relative; left: {{position}}px;">{{q}} =</span>
+					<span class="formBlock" style="position: relative; left: {{position}}px;">
+						<form>
+							<input type="text" name="userAnswer">
+							<input type="hidden" name="realAnswer" value="{{a}}">
+							<input type="hidden" name="question" value="{{q}}">
+						</form>
+					</span>
 			</div>
 		
 			{{/unless}}
