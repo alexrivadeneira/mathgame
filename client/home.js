@@ -1,6 +1,10 @@
 Template.gamesList.helpers({
 	games: function(){
-		return Games.find({});
+		// limit this to only games where the user is involved
+
+		var currentUserId = Meteor.userId();
+
+		return Games.find({playerOne:});
 	}
 });
 
